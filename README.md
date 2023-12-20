@@ -1,87 +1,152 @@
-# Frontend Mentor - QR code component
+# Frontend Mentor - QR code component solution
 
-![Design preview for the QR code component coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+## Overview
 
-## The challenge
+This is a simple webpage of QR code which is at the center of the page. There are some flex items and some and aligned justified using the properties. This is a very basic project 
 
-Your challenge is to build out this QR code component and get it looking as close to the design as possible.
+### Screenshot
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+![](./screenshot.png)
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
 
-## Where to find everything
+### Links
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+- Live Site URL: [https://zesty-zabaione-7f9f6b.netlify.app/]
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+## My process
+This is a basic webpage design. I find it challanging while doing the project at first becausse i am a beginner to webdesigning. Any way it got easier when i started doing it. 
+### Built with
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### What I learned
 
-## Building your project
+I have learned some more advantages of the flex box. It was easier to do basic alignment and justifiying the content. It was easier for me to make the QR code and the content in the center of the page. I have used the height for the main container as 100vh and gave the 'justify' and 'align' to center for the qr container.
+I have alson made the width of the 'qr container' to 250 px for making the width of the qr container as in the project image
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+To see how you can add code snippets, see below:
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+```html
+<section id="qr-code">
+    <div class="container">
+      <div class="qr-container">
+        <div class="qr-image">
+          <img src="./images/image-qr-code.png" alt="" class="qr-image">
+        </div>
+        <div class="qr-content">
+          <h1>Improve your front-end skills by building projects</h1>
+          <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+        </div>
+      </div>
+    </div>
+  </section>
+```
+```css
+ :root {
+      --white: hsl(0, 0%, 100%);
+      --light-grey: hsl(212, 45%, 89%);
+      --grayish-blue: hsl(220, 15%, 55%);
+      --dark-blue: hsl(218, 44%, 22%);
+    }
 
-## Deploying your project
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+    body {
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.2;
+      background: var(--light-grey);
+    }
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 100vh;
+      padding: 0 10px;
+    }
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+    .qr-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1rem 1.8rem 1rem;
+      background: var(--white);
+      color: black;
+      text-align: center;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 
-## Create a custom `README.md`
+    }
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+    .qr-container .qr-image {
+      display: inline-block;
+      width: 100%;
+      border-radius: 10px;
+    }
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+    .qr-container .qr-content h1 {
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+      padding: 1rem 0;
+      font-weight: 700;
+    }
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+    .qr-container .qr-content p {
+      font-size: 14px;
+      color: var(--grayish-blue);
+      font-weight: 400;
+    }
 
-## Submitting your solution
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
 
-## Sharing your solution
+```
 
-There are multiple places you can share your solution:
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
 
-## Got feedback for us?
+## Author
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+- Website - [mishal musthafa](https://mishalmusthafa.netlify.app/)
+- Frontend Mentor - [@mishalmusthafa](https://www.frontendmentor.io/profile/mishalmusthafa)
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
 
-**Have fun building!** 🚀
+## Acknowledgments
+
+I have learned the basics of the HTML and CSS from Brad Traversy on udemy. Which helped me a lot on this project. He got many helpfull courses on udemy and also in the youtube for free. He is an excenllent tutor. Please check it out if you are a beginner to the webdevelopment
+
+
